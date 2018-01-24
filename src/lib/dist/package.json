@@ -1,19 +1,10 @@
 {
-  "name": "multiple-apps",
-  "version": "0.0.0",
+  "name": "star-lib",
+  "version": "1.0.0",
+  "description": "Common utilities for star",
   "license": "MIT",
-  "scripts": {
-    "ng": "ng",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e",
-    "start": "npm run build:lib && ng serve --preserve-symlinks",
-    "build": "npm run build:lib && ng build --prod",
-    "pack": "ng-packagr -p ng-package.json",
-    "build:lib": "ng-packagr -p src/lib/ngpackage.json && cd src/lib/dist && npm unlink && npm link && cd ../../ && npm link star-lib"
-  },
   "private": true,
-  "dependencies": {
+  "peerDependencies": {
     "@angular/animations": "5.2.0",
     "@angular/common": "5.2.0",
     "@angular/compiler": "5.2.0",
@@ -25,9 +16,7 @@
     "@angular/router": "5.2.0",
     "core-js": "2.4.1",
     "rxjs": "5.5.6",
-    "zone.js": "0.8.19"
-  },
-  "devDependencies": {
+    "zone.js": "0.8.19",
     "@angular/cli": "1.6.5",
     "@angular/compiler-cli": "5.2.0",
     "@angular/language-service": "5.2.0",
@@ -48,5 +37,10 @@
     "ts-node": "4.1.0",
     "tslint": "5.9.1",
     "typescript": "2.6.2"
-  }
+  },
+  "main": "bundles/star-lib.umd.js",
+  "module": "star-lib.es5.js",
+  "es2015": "star-lib.js",
+  "typings": "star-lib.d.ts",
+  "metadata": "star-lib.metadata.json"
 }
